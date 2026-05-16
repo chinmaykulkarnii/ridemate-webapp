@@ -1,0 +1,33 @@
+# Backend (Spring Boot)
+ridemate-backend/target/
+ridemate-backend/.mvn/
+ridemate-backend/mvnw
+ridemate-backend/mvnw.cmd
+ridemate-backend/.idea/
+ridemate-backend/*.iml
+ridemate-backend/HELP.md
+
+# Frontend (React)
+ridemate-frontend/node_modules/
+ridemate-frontend/build/
+ridemate-frontend/.env
+ridemate-frontend/.env.local
+ridemate-frontend/.env.development.local
+ridemate-frontend/.env.test.local
+ridemate-frontend/.env.production.local
+ridemate-frontend/npm-debug.log*
+ridemate-frontend/yarn-debug.log*
+ridemate-frontend/yarn-error.log*
+
+# IDE
+.DS_Store
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Logs
+*.log
+
+# OS
+Thumbs.db

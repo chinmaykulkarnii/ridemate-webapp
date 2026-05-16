@@ -1,0 +1,149 @@
+.ride-search-map-container {
+  height: 500px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.ride-popup {
+  min-width: 200px;
+}
+
+.ride-popup p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+.ride-popup strong {
+  color: #374151;
+}
+
+.popup-view-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.popup-view-btn:hover {
+  background: #5568d3;
+}
+
+/* Real-time Tracking Styles */
+.real-time-tracking {
+  width: 100%;
+}
+
+.tracking-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.eta-display {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eta-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.eta-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.tracking-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.tracking-map-container {
+  height: 500px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tracking-unavailable {
+  padding: 40px;
+  text-align: center;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 2px dashed #d1d5db;
+}
+
+.tracking-unavailable p {
+  color: #6b7280;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.tracking-unavailable p:first-child {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+@media (max-width: 768px) {
+  .ride-search-map-container,
+  .tracking-map-container {
+    height: 400px;
+  }
+
+  .tracking-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .eta-value {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,339 @@
+.emergency-sos-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: 4px solid white;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.5);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  z-index: 1000;
+  transition: all 0.3s;
+  animation: pulse-sos 2s infinite;
+}
+
+@keyframes pulse-sos {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(239, 68, 68, 0.8);
+  }
+}
+
+.emergency-sos-button:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(239, 68, 68, 0.7);
+}
+
+.emergency-sos-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.emergency-sos-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sos-icon {
+  font-size: 32px;
+}
+
+.sos-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Dialog */
+.emergency-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.emergency-dialog {
+  background: white;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.dialog-icon {
+  font-size: 32px;
+}
+
+.dialog-header h3 {
+  font-size: 20px;
+  color: #1f2937;
+  margin: 0;
+}
+
+.dialog-content {
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.dialog-content ul {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.dialog-content li {
+  margin: 6px 0;
+}
+
+.dialog-warning {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #ef4444;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dialog-actions .btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-cancel {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-cancel:hover {
+  background: #d1d5db;
+}
+
+.btn-emergency {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-emergency:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Active Emergency */
+.emergency-active {
+  position: fixed;
+  top: 80px;
+  right: 24px;
+  max-width: 400px;
+  width: 90%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ef4444;
+  z-index: 1000;
+  animation: slideInRight 0.3s;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(500px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.emergency-active-header {
+  background: #ef4444;
+  color: white;
+  padding: 16px;
+  border-radius: 9px 9px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.emergency-icon-large {
+  font-size: 32px;
+}
+
+.emergency-active-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.emergency-active-content {
+  padding: 16px;
+}
+
+.emergency-message {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.emergency-time {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.emergency-location {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.emergency-location strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #374151;
+}
+
+.emergency-location p {
+  margin: 2px 0;
+  color: #6b7280;
+  font-family: monospace;
+}
+
+.emergency-instructions {
+  margin-bottom: 16px;
+}
+
+.emergency-instructions h4 {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.emergency-instructions ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.emergency-instructions li {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.emergency-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.emergency-actions .btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-resolve {
+  background: #10b981;
+  color: white;
+}
+
+.btn-resolve:hover {
+  background: #059669;
+}
+
+.btn-false-alarm {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-false-alarm:hover {
+  background: #d97706;
+}
+
+@media (max-width: 640px) {
+  .emergency-sos-button {
+    width: 60px;
+    height: 60px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .sos-icon {
+    font-size: 24px;
+  }
+
+  .sos-text {
+    font-size: 11px;
+  }
+
+  .emergency-active {
+    top: 70px;
+    right: 16px;
+    left: 16px;
+    max-width: none;
+  }
+}
